@@ -1,0 +1,49 @@
+
+
+<!-- <div ng-repeat="comment in comments">
+
+    <h4>{{comment.username}}</h4>
+    <p>{{comment.content}}</p>
+</div> -->
+<md-toolbar layout="row" class="md-accent">
+        <div class="md-toolbar-tools">
+                <ng-md-icon icon="arrow_back" style="fill: white" size="40" ng-click="goBack()"></ng-md-icon> 
+        </div>
+      </md-toolbar>
+
+<md-tabs md-dynamic-height md-border-bottom class="md-primary">
+        <md-tab label="Article">
+                <md-content class="md-padding">
+                        <md-card>
+                                <md-card-title>
+                                    <md-card-title-text>
+                                        <strong>{{article.name}}</strong>
+                                    </md-card-title-text>
+                                </md-card-title>
+                                <md-card-content>
+                                    <p>{{article.content}}</p>
+                                </md-card-content>
+                            </md-card>
+                            <ng-formcomment></ng-formcomment>
+                </md-content>
+        </md-tab>  
+
+        <md-tab label="Commentaire({{article.comments.length}})">
+          <md-content class="md-padding">
+
+            <md-list class="md-dense" ng-repeat="comment in comments">
+                    <md-list-item class="md-3-line md-long-text">
+                            <img src="https://www.adrln.com/wp-content/uploads/2017/05/img.png" class="md-avatar" />
+                            <div class="md-list-item-text" layout="column">
+                              <h3>{{ comment.username }}</h3>
+                              <h4>{{ comment.city }}</h4>
+                              <p>{{ comment.content }}</p>
+                            </div>
+                    </md-list-item> 
+                    <md-divider ></md-divider>
+            </md-list>
+            <ng-formcomment></ng-formcomment>
+          </md-content>
+        </md-tab>
+</md-tabs>
+

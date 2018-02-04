@@ -1,0 +1,33 @@
+<!-- <div ng-repeat="article in articles">
+
+
+
+</div> -->
+
+
+<div  layout="column" ng-repeat="article in articles">
+
+    <md-card>
+
+        <img ng-src="{{myImage}}" class="md-card-image" alt="Washed Out">
+
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">{{article.name}}</span>
+            </md-card-title-text>
+        </md-card-title>
+
+        <md-card-content>
+            <p>{{article.content}}</p>
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="end center">
+                <md-button class="md-accent md-raised" ng-href="#comments/{{article.id}}">Commentaire: {{article.comments.length}}</md-button>
+        </md-card-actions>
+
+
+
+    </md-card>
+
+</div>
+
+    

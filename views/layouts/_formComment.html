@@ -1,0 +1,40 @@
+
+    <div layout="row" class="md-primary" layout-padding>
+        <h2>Add Comment</h2>
+    </div>
+
+    <form name="projectForm">
+
+        <div layout="row">
+
+            <md-input-container flex="50">
+                <label>Name</label>
+                <input required type="text" name="clientName" ng-model="usernameComment">
+                <div ng-messages="projectForm.clientName.$error">
+                    <div ng-message="required">This is required</div>
+                </div>
+            </md-input-container>
+
+            <md-input-container flex="50">
+                <label>City</label>
+                <input required type="text" name="clientCity" ng-model="cityComment">
+                <div ng-messages="projectForm.clientCity.$error">
+                    <div ng-message="required">This is required</div>
+                </div>
+            </md-input-container>
+
+        </div>
+
+        <md-input-container class="md-block">
+            <label>Comment</label>
+            <textarea required name="clientComment" ng-model="newComment" minlength="10" maxlength="150" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+            <div ng-messages="projectForm.clientComment.$error" role="alert">
+                    <div ng-message-exp="['required', 'minlength', 'maxlength']">Your comment must be between 10 and 150 characters long</div>
+            </div>
+        </md-input-container>
+
+        <div layout="row">
+                <md-button type="submit" class="md-primary">Submit</md-button>
+        </div>
+    
+    </form>
